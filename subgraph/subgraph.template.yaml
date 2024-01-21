@@ -1,0 +1,83 @@
+specVersion: 0.0.4
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: TermPoolFactory
+    network: "{{ network }}"
+    source:
+      abi: TermPoolFactory
+      address: "{{ TermPoolFactory.address }}"
+      startBlock: {{ TermPoolFactory.startBlock }}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - PoolList
+        - Pool
+      abis:
+        - name: TermPoolFactory
+          file: ./abis/TermPoolFactory.json
+        - name: ERC20
+          file: ./abis/ERC20.json
+        - name: TermPool
+          file: ./abis/TermPool.json
+      eventHandlers:
+        - event: TermPoolCreated(indexed address,indexed address)
+          handler: handlePoolCreated
+      file: ./src/TermPoolFactory.ts
+templates:
+  - kind: ethereum/contract
+    name: TermPool
+    network: "{{ network }}"
+    source:
+      abi: TermPool
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      file: ./src/termPool.ts
+      entities:
+        - Operation
+        - Pool
+      abis:
+        - name: TermPool
+          file: ./abis/TermPool.json
+        - name: ERC20
+          file: ./abis/ERC20.json
+      eventHandlers:
+        - event: TermCreated(indexed uint256,uint256,uint256,uint256,uint256,uint256)
+          handler: handleTermCreated
+        - event: LiquidityProvided(indexed address,indexed uint256,uint256)
+          handler: handleLiquidityProvided
+        - event: LiquidityRedeemed(indexed address,indexed uint256,uint256)
+          handler: handleLiquidityRedeemed
+        - event: RewardTopUp(indexed uint256,uint256)
+          handler: handleRewardTopup
+        - event: PoolListingChanged(bool)
+          handler: handleListingChanged
+        - event: TermStatusChanged(indexed uint256,uint8)
+          handler: handleStatusChange
+        - event: PartialRepaymentAllowed(indexed uint256)
+          handler: handlePartialRepaymentAllowance
+  - kind: ethereum/contract
+    name: TermToken
+    network: "{{ network }}"
+    source:
+      abi: TermToken
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      file: ./src/termPool.ts
+      entities:
+        - Operation
+        - Pool
+      abis:
+        - name: TermToken
+          file: ./abis/TpToken.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleMembersTransfer
+

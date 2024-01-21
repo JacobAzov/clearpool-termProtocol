@@ -1,0 +1,37 @@
+{
+  "name": "clearpool-term-subgraph",
+  "license": "UNLICENSED",
+  "scripts": {
+    "update-abis": "node scripts/updateAbis",
+    "update-deployments": "node scripts/updateDeployments",
+    "prepare:goerli": "mustache networks/goerli.json subgraph.template.yaml > subgraph.yaml",
+    "prepare:mainnet": "mustache networks/mainnet.json subgraph.template.yaml > subgraph.yaml",
+    "prepare:sepolia": "mustache networks/sepolia.json subgraph.template.yaml > subgraph.yaml",
+    "prepare:mumbai": "mustache networks/mumbai.json subgraph.template.yaml > subgraph.yaml",
+    "prepare:polygon": "mustache networks/matic.json subgraph.template.yaml > subgraph.yaml",
+    "prepare:zkevm": "mustache networks/zkevm.json subgraph.template.yaml > subgraph.yaml",
+    "codegen": "npm run prepare:mumbai && node scripts/updateAbis && graph codegen",
+    "build:goerli": "npm run prepare:goerli && graph build",
+    "build:mainnet": "npm run prepare:mainnet && graph build",
+    "build:sepolia": "npm run prepare:sepolia && graph build",
+    "build:mumbai": "npm run prepare:mumbai && graph build",
+    "build:polygon": "npm run prepare:polygon && graph build",
+    "deploy": "graph deploy --studio clearpool",
+    "deploy:goerli": "npm run prepare:goerli && graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ georgeciubotaru/cpool-terms-goerli --access-token ${GRAPH_TOKEN}",
+    "deploy:mainnet": "npm run prepare:mainnet && graph deploy --studio cpool-terms-mainnet --deploy-key ${GRAPH_TOKEN}",
+    "deploy:mumbai": "npm run prepare:mumbai && graph deploy --studio cpool-terms-mumbai --deploy-key ${GRAPH_TOKEN}",
+    "deploy:sepolia": "npm run prepare:sepolia && graph deploy --studio cpool-terms-sepolia --deploy-key ${GRAPH_TOKEN}",
+    "deploy:polygon": "npm run prepare:polygon && graph deploy --studio cpool-terms-polygon --deploy-key ${GRAPH_TOKEN}",
+    "deploy:zkevm": "npm run prepare:zkevm && graph deploy --studio cpool-terms-zkevm --deploy-key ${GRAPH_TOKEN}"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.50.1",
+    "@graphprotocol/graph-ts": "0.27.0"
+  },
+  "devDependencies": {
+    "mustache": "^3.1.0"
+  },
+  "engines": {
+    "node": "=16.17.x"
+  }
+}

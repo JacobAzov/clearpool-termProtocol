@@ -1,0 +1,33 @@
+{
+  "name": "clearpool-term-protocol",
+  "description": "Term pools https://docs.google.com/document/d/11ARzg7l0oIzd0UKLXll90VgmhPuSAJ2zc3pLPyxviAE/edit#",
+  "main": "index.js",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "coverage": "hardhat coverage",
+    "types": "npm install && npx hardhat typechain"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clearpool-finance/term-protocol.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/clearpool-finance/term-protocol/issues"
+  },
+  "homepage": "https://github.com/clearpool-finance/term-protocol#readme",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^2.0.0",
+    "@openzeppelin/contracts": "4.9.3",
+    "@openzeppelin/contracts-upgradeable": "4.9.3",
+    "@openzeppelin/hardhat-upgrades": "^1.22.0",
+    "dotenv": "^16.0.3",
+    "hardhat": "^2.12.4",
+    "hardhat-address-exporter": "^0.0.4",
+    "hardhat-dependency-compiler": "^1.1.3",
+    "prettier": "^3.0.0",
+    "prettier-plugin-solidity": "^1.1.3"
+  }
+}

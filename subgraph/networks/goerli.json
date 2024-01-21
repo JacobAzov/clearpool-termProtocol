@@ -1,0 +1,11 @@
+{
+  "network": "goerli",
+  "PoolFactory": {
+    "address": "",
+    "startBlock": 1
+  },
+  "Auction": {
+    "address": "",
+    "startBlock": 1
+  }
+}

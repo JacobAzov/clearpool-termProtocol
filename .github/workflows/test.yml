@@ -1,0 +1,40 @@
+name: Autotests
+
+on:
+  push:
+    branches:
+      - "main"
+      - "fix/**"
+
+  pull_request:
+    types: [opened, reopened, ready_for_review]
+    branches:
+      - "main"
+      - "release/**"
+      - "fix/**"
+
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.draft == false 
+    # || github.event.review.state == 'ready_for_review'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install nodejs
+        uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+          cache: "npm"
+
+      - name: Install packages
+        run: npm i
+
+      - name: Compile contracts
+        run: npm run compile
+
+      - name: Run tests
+        run: npm run test

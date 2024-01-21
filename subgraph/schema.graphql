@@ -1,0 +1,70 @@
+type PoolList @entity {
+  id: ID!
+  pools: [String!]!
+}
+
+enum TermState {
+  Created
+  Repaid
+  Cancelled
+}
+
+type Pool @entity {
+  id: ID!
+  address: Bytes!
+  borrower: Bytes!
+  cpToken: Bytes!
+
+  visible: Boolean!
+  symbol: String!
+  decimals: BigInt!
+
+  terms: [Term!] @derivedFrom(field: "pool")
+  members: [TermMember!] @derivedFrom(field: "pool")
+}
+
+type Term @entity {
+  id: ID!
+  symbol: String!
+  index: String!
+  pool: Pool!
+  state: TermState!
+  partialRepaymentAllowed: Boolean!
+
+  maxSize: BigInt!
+  size: BigInt!
+  rewardRate: BigInt!
+  availableReward: BigInt!
+  rewardsDebt: BigInt!
+
+  startDate: BigInt!
+  depositWindow: BigInt!
+  maturity: BigInt!
+  duration: BigInt!
+
+  operations: [Operation!] @derivedFrom(field: "term")
+  members: [TermMember!] @derivedFrom(field: "term")
+}
+
+type Operation @entity {
+  id: ID!
+  pool: Pool!
+  term: Term!
+  type: String!
+  amount: BigInt!
+  createdAt: BigInt!
+  txHash: Bytes!
+  account: Bytes!
+}
+
+type TermMember @entity {
+  id: ID!
+  pool: Pool!
+  term: Term!
+
+  address: Bytes!
+  principal: BigInt!
+  interest: BigInt!
+
+  operations: [Operation!]!
+}

@@ -1,0 +1,129 @@
+name: Add new issues to the Sprint project
+on:
+  issues:
+    types:
+      - opened
+      - transferred
+  pull_request:
+    types:
+      - opened
+jobs:
+  add-to-project:
+    name: Add issue to project
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get project data
+        run: |
+            gh api graphql -f query='
+              query($org: String!, $number: Int!) {
+                organization(login: $org){
+                  projectV2(number: $number) {
+                    id
+                    fields(first:20) {
+                      nodes {
+                        ... on ProjectV2Field {
+                          id
+                          name
+                        }
+                        ... on ProjectV2SingleSelectField {
+                          id
+                          name
+                          options {
+                            id
+                            name
+                          }
+                        }
+                        ... on ProjectV2IterationField {
+                          id
+                          name
+                          configuration {
+                            iterations {
+                              startDate
+                              id
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }' -f org=$ORGANIZATION -F number=$PROJECT_NUMBER > project_data.json
+
+            echo 'PROJECT_ID='$(jq '.data.organization.projectV2.id' project_data.json) >> $GITHUB_ENV
+            echo 'STATUS_FIELD_ID='$(jq '.data.organization.projectV2.fields.nodes[] | select(.name== "Status") | .id' project_data.json) >> $GITHUB_ENV
+            echo 'STATUS_FIELD_OPTION_INPROGRESS_ID='$(jq '.data.organization.projectV2.fields.nodes[] | select(.name== "Status") | .options[] | select(.name=="🏗 In progress (WIP = 3 per person)") | .id' project_data.json) >> $GITHUB_ENV
+            echo 'STATUS_FIELD_OPTION_BACKLOG_ID='$(jq '.data.organization.projectV2.fields.nodes[] | select(.name== "Status") | .options[] | select(.name=="📋 Backlog") | .id' project_data.json) >> $GITHUB_ENV
+            echo 'ITERATION_FIELD_ID='$(jq '.data.organization.projectV2.fields.nodes[] | select(.name== "Iteration") | .id' project_data.json) >> $GITHUB_ENV
+            echo 'ITERATION_FIELD_OPTION_ID='$(jq '.data.organization.projectV2.fields.nodes[] | select(.name== "Iteration") | .configuration.iterations[0] | .id' project_data.json) >> $GITHUB_ENV
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+          ORGANIZATION: clearpool-finance
+          PROJECT_NUMBER: 4
+      - name: 'Add issue or PR to the project'
+        id: 'add-project'
+        uses: actions/add-to-project@v0.4.0
+        with:
+          project-url: https://github.com/orgs/clearpool-finance/projects/4
+          github-token: ${{ secrets.GH_PAT }}
+      - name: 'Get project Item type'
+        run: |
+          gh api graphql -f query='
+            query($projectItemId: ID!) {
+              node(id: $projectItemId) {
+                ... on ProjectV2Item {
+                  type
+                }
+              }
+            }' -f projectItemId=$CONTENT_ID > project_item.json
+
+          echo 'ITEM_TYPE='$(jq '.data.node.type' project_item.json) | xargs >> $GITHUB_ENV
+          echo 'EXCEPTED_VAL='"PULL_REQUEST" >> $GITHUB_ENV
+        env:
+          CONTENT_ID: ${{ steps.add-project.outputs.itemId }}
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+      - name: 'Set correct status'
+        run: |
+          if [[ "$ITEM_TYPE" == "$EXCEPTED_VAL" ]]; then 
+            echo 'STATUS_FIELD_OPTION_ID='$STATUS_FIELD_OPTION_INPROGRESS_ID >> $GITHUB_ENV
+          else 
+            echo 'STATUS_FIELD_OPTION_ID='$STATUS_FIELD_OPTION_BACKLOG_ID >> $GITHUB_ENV
+          fi
+      - name: 'Set fields'
+        run: |
+          gh api graphql -f query='
+            mutation (
+              $project: ID!
+              $item: ID!
+              $statusFieldId: ID!
+              $iterationFieldId: ID!
+              $statusOptionId: String!
+              $iterationOptionId: String!
+            ) {
+              setStatus: updateProjectV2ItemFieldValue(input: {
+                projectId: $project
+                itemId: $item
+                fieldId: $statusFieldId
+                value: { 
+                  singleSelectOptionId: $statusOptionId        
+                }
+              }) {
+                projectV2Item {
+                  id
+                }
+              }
+              setIteration: updateProjectV2ItemFieldValue(input: {
+                projectId: $project
+                itemId: $item
+                fieldId: $iterationFieldId
+                value: { 
+                  iterationId: $iterationOptionId        
+                }
+              }) {
+                projectV2Item {
+                  id
+                }
+              }
+            }' -f project=$PROJECT_ID -f item=$CONTENT_ID -f statusFieldId=$STATUS_FIELD_ID -f iterationFieldId=$ITERATION_FIELD_ID -f statusOptionId=${{ env.STATUS_FIELD_OPTION_ID }} -f iterationOptionId=${{ env.ITERATION_FIELD_OPTION_ID }} --silent
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+          CONTENT_ID: ${{ steps.add-project.outputs.itemId }}

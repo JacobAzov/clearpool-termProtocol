@@ -1,0 +1,7 @@
+{
+    "network": "polygon-zkevm",
+    "TermPoolFactory": {
+        "address": "0x04DF6f15a8c2fE4BF2E7c5CC4e4d7c7DfdCd4445",
+        "startBlock": 4490972
+    }
+}

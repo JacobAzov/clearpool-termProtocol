@@ -1,0 +1,7 @@
+{
+  "network": "mumbai",
+  "TermPoolFactory": {
+    "address": "0x16cb0DE825a964ca9e8d3Ad79FC356fd938D4d39",
+    "startBlock": 39016426
+  }
+}

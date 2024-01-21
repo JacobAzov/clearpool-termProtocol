@@ -1,0 +1,7 @@
+{
+  "network": "mainnet",
+  "TermPoolFactory": {
+    "address": "0x91a4a196Aa25058E523b077A22df420D6aA2e60E",
+    "startBlock": 17919592
+  }
+}

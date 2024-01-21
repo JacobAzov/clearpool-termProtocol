@@ -1,0 +1,2013 @@
+{
+  "manifestVersion": "3.2",
+  "admin": {
+    "address": "0x5ff9fC8065a4e5589357066e2aF14D4684807903",
+    "txHash": "0xc29efb048d86a9b24b876c5726982cf4bc9059797ac5737dd2d2015a4d073d99"
+  },
+  "proxies": [
+    {
+      "address": "0x1099E2Aeb2DdCee111A40c37cAe3574ddcB44808",
+      "txHash": "0x0c880c99904b806b563066a0b38ca2bbb97ad3bf5d345260bfa132a8fa3f46e3",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x59137c2C6f3dFc38BBad50515A63A120AF33d2B5",
+      "txHash": "0x9c6663e9ac1743b3febec468556820dcf8ffc11dd92b31405abbcd7de88a4f7e",
+      "kind": "transparent"
+    }
+  ],
+  "impls": {
+    "da33ae78c42fe7db9d99881550d891ec3451a80fdc6e4a661ee02c0f7ad7de52": {
+      "address": "0xC477f5DaeeaA5EfeA375D74198856bF0f47d84d2",
+      "txHash": "0x63c50e7e9b21baeb3744bda035a446571ea4babd6bc9f9efe737adabc3d2c2b5",
+      "layout": {
+        "solcVersion": "0.8.17",
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
+          },
+          {
+            "label": "listedPoolsCount",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_uint256",
+            "contract": "TermPoolFactory",
+            "src": "contracts/TermPoolFactory.sol:17"
+          },
+          {
+            "label": "permissionlessFactory",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_address",
+            "contract": "TermPoolFactory",
+            "src": "contracts/TermPoolFactory.sol:20"
+          },
+          {
+            "label": "termPoolBeacon",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_address",
+            "contract": "TermPoolFactory",
+            "src": "contracts/TermPoolFactory.sol:23"
+          },
+          {
+            "label": "tpTokenBeacon",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_address",
+            "contract": "TermPoolFactory",
+            "src": "contracts/TermPoolFactory.sol:26"
+          },
+          {
+            "label": "_usedCpTokens",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_array(t_address)dyn_storage",
+            "contract": "TermPoolFactory",
+            "src": "contracts/TermPoolFactory.sol:29"
+          },
+          {
+            "label": "poolsByCpToken",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_mapping(t_address,t_struct(PoolInfo)4819_storage)",
+            "contract": "TermPoolFactory",
+            "src": "contracts/TermPoolFactory.sol:32"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]",
+            "numberOfBytes": "32"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_struct(PoolInfo)4819_storage)": {
+            "label": "mapping(address => struct ITermPoolFactory.PoolInfo)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(PoolInfo)4819_storage": {
+            "label": "struct ITermPoolFactory.PoolInfo",
+            "members": [
+              {
+                "label": "pool",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "currency",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "isListed",
+                "type": "t_bool",
+                "offset": 20,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "32450d1750c4e3dbd4f79eeca0cc27d38059628a351c8b262a7f0f1a4013c8f5": {
+      "address": "0x7b0A3F3f1F8189458Bd032D1380d53Cb7fbFAB85",
+      "txHash": "0x811e8cc860c46a2235e0c362c3c2f2d915fa3784d129c07cd30aed46e3ef5ea1",
+      "layout": {
+        "solcVersion": "0.8.17",
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
+          },
+          {
+            "label": "factory",
+            "offset": 2,
+            "slot": "0",
+            "type": "t_address",
+            "contract": "TermPool",
+            "src": "contracts/TermPool.sol:22"
+          },
+          {
+            "label": "cpToken",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_address",
+            "contract": "TermPool",
+            "src": "contracts/TermPool.sol:25"
+          },
+          {
+            "label": "borrower",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_address",
+            "contract": "TermPool",
+            "src": "contracts/TermPool.sol:28"
+          },
+          {
+            "label": "isListed",
+            "offset": 20,
+            "slot": "2",
+            "type": "t_bool",
+            "contract": "TermPool",
+            "src": "contracts/TermPool.sol:31"
+          },
+          {
+            "label": "terms",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_array(t_struct(Term)7382_storage)dyn_storage",
+            "contract": "TermPool",
+            "src": "contracts/TermPool.sol:41"
+          },
+          {
+            "label": "activeTermsIndex",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_struct(UintSet)5627_storage",
+            "contract": "TermPool",
+            "src": "contracts/TermPool.sol:44"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_bytes32)dyn_storage": {
+            "label": "bytes32[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_struct(Term)7382_storage)dyn_storage": {
+            "label": "struct ITermPool.Term[]",
+            "numberOfBytes": "32"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_bytes32": {
+            "label": "bytes32",
+            "numberOfBytes": "32"
+          },
+          "t_enum(TermStatus)7360": {
+            "label": "enum ITermPool.TermStatus",
+            "members": [
+              "Created",
+              "Cancelled",
+              "Repayed"
+            ],
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_bytes32,t_uint256)": {
+            "label": "mapping(bytes32 => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Set)5155_storage": {
+            "label": "struct EnumerableSet.Set",
+            "members": [
+              {
+                "label": "_values",
+                "type": "t_array(t_bytes32)dyn_storage",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_indexes",
+                "type": "t_mapping(t_bytes32,t_uint256)",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_struct(Term)7382_storage": {
+            "label": "struct ITermPool.Term",
+            "members": [
+              {
+                "label": "minSize",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "maxSize",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "size",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "startDate",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "depositWindowMaturity",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "maturityDate",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "5"
+              },
+              {
+                "label": "rewardRate",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "6"
+              },
+              {
+                "label": "availableReward",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "7"
+              },
+              {
+                "label": "status",
+                "type": "t_enum(TermStatus)7360",
+                "offset": 0,
+                "slot": "8"
+              },
+              {
+                "label": "tpToken",
+                "type": "t_address",
+                "offset": 1,
+                "slot": "8"
+              }
+            ],
+            "numberOfBytes": "288"
+          },
+          "t_struct(UintSet)5627_storage": {
+            "label": "struct EnumerableSet.UintSet",
+            "members": [
+              {
+                "label": "_inner",
+                "type": "t_struct(Set)5155_storage",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "f0a1e43373d3f07c3546bcaa5ad661e25a1cdb89474b14acce8eb2332188066c": {
+      "address": "0xf0916cC46c8366B1D357572f410b43487F148E35",
+      "txHash": "0x966305f0fb907fa797ae642393137da541c23671e113f19cd9caf71500889c94",
+      "layout": {
+        "solcVersion": "0.8.17",
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:36"
+          },
+          {
+            "label": "_balances",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "ERC20Upgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol:37"
+          },
+          {
+            "label": "_allowances",
+            "offset": 0,
+            "slot": "52",
+            "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+            "contract": "ERC20Upgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol:39"
+          },
+          {
+            "label": "_totalSupply",
+            "offset": 0,
+            "slot": "53",
+            "type": "t_uint256",
+            "contract": "ERC20Upgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol:41"
+          },
+          {
+            "label": "_name",
+            "offset": 0,
+            "slot": "54",
+            "type": "t_string_storage",
+            "contract": "ERC20Upgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol:43"
+          },
+          {
+            "label": "_symbol",
+            "offset": 0,
+            "slot": "55",
+            "type": "t_string_storage",
+            "contract": "ERC20Upgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol:44"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "56",
+            "type": "t_array(t_uint256)45_storage",
+            "contract": "ERC20Upgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol:400"
+          },
+          {
+            "label": "termPool",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_address",
+            "contract": "TpToken",
+            "src": "contracts/TpToken.sol:10"
+          },
+          {
+            "label": "__decimals",
+            "offset": 20,
+            "slot": "101",
+            "type": "t_uint8",
+            "contract": "TpToken",
+            "src": "contracts/TpToken.sol:13"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_uint256)45_storage": {
+            "label": "uint256[45]",
+            "numberOfBytes": "1440"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+            "label": "mapping(address => mapping(address => uint256))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "ed7099761a7fc06ec6e8e8d4a43c4c75deac1a98269cf49f1ec6ad6498114a03": {
+      "address": "0x1dF5b201dD342210560B03dAe9664E91C5E82fe2",
+      "txHash": "0xcaa63853f25ecd3304693652afbbe36e8f04dd4a28ca8b15a06e91d32e18205f",
+      "layout": {
+        "solcVersion": "0.8.17",
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
+          },
+          {
+            "label": "factory",
+            "offset": 2,
+            "slot": "0",
+            "type": "t_address",
+            "contract": "TermPool",
+            "src": "contracts/TermPool.sol:22"
+          },
+          {
+            "label": "cpToken",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_address",
+            "contract": "TermPool",
+            "src": "contracts/TermPool.sol:25"
+          },
+          {
+            "label": "borrower",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_address",
+            "contract": "TermPool",
+            "src": "contracts/TermPool.sol:28"
+          },
+          {
+            "label": "isListed",
+            "offset": 20,
+            "slot": "2",
+            "type": "t_bool",
+            "contract": "TermPool",
+            "src": "contracts/TermPool.sol:31"
+          },
+          {
+            "label": "terms",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_array(t_struct(Term)4216_storage)dyn_storage",
+            "contract": "TermPool",
+            "src": "contracts/TermPool.sol:41"
+          },
+          {
+            "label": "activeTermsIndex",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_struct(UintSet)2862_storage",
+            "contract": "TermPool",
+            "src": "contracts/TermPool.sol:44"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_bytes32)dyn_storage": {
+            "label": "bytes32[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_struct(Term)4216_storage)dyn_storage": {
+            "label": "struct ITermPool.Term[]",
+            "numberOfBytes": "32"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_bytes32": {
+            "label": "bytes32",
+            "numberOfBytes": "32"
+          },
+          "t_enum(TermStatus)4194": {
+            "label": "enum ITermPool.TermStatus",
+            "members": [
+              "Created",
+              "Cancelled",
+              "Repayed"
+            ],
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_bytes32,t_uint256)": {
+            "label": "mapping(bytes32 => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Set)2390_storage": {
+            "label": "struct EnumerableSet.Set",
+            "members": [
+              {
+                "label": "_values",
+                "type": "t_array(t_bytes32)dyn_storage",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_indexes",
+                "type": "t_mapping(t_bytes32,t_uint256)",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_struct(Term)4216_storage": {
+            "label": "struct ITermPool.Term",
+            "members": [
+              {
+                "label": "minSize",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "maxSize",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "size",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "startDate",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "depositWindowMaturity",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "maturityDate",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "5"
+              },
+              {
+                "label": "rewardRate",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "6"
+              },
+              {
+                "label": "availableReward",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "7"
+              },
+              {
+                "label": "status",
+                "type": "t_enum(TermStatus)4194",
+                "offset": 0,
+                "slot": "8"
+              },
+              {
+                "label": "tpToken",
+                "type": "t_address",
+                "offset": 1,
+                "slot": "8"
+              }
+            ],
+            "numberOfBytes": "288"
+          },
+          "t_struct(UintSet)2862_storage": {
+            "label": "struct EnumerableSet.UintSet",
+            "members": [
+              {
+                "label": "_inner",
+                "type": "t_struct(Set)2390_storage",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "710c1c376711ad2914848fd24db84f9e7bb6ae762a40846c352000a460676077": {
+      "address": "0xCeB275CB2F6866bE066860e83B6107948e6B1e56",
+      "txHash": "0xc8afc9743e060a0002b064b7a1529ce3c4ddbc2329d3c0cca0c14b56f630a2f1",
+      "layout": {
+        "solcVersion": "0.8.17",
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
+          },
+          {
+            "label": "factory",
+            "offset": 2,
+            "slot": "0",
+            "type": "t_address",
+            "contract": "TermPool",
+            "src": "contracts/TermPool.sol:22"
+          },
+          {
+            "label": "cpToken",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_address",
+            "contract": "TermPool",
+            "src": "contracts/TermPool.sol:25"
+          },
+          {
+            "label": "borrower",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_address",
+            "contract": "TermPool",
+            "src": "contracts/TermPool.sol:28"
+          },
+          {
+            "label": "isListed",
+            "offset": 20,
+            "slot": "2",
+            "type": "t_bool",
+            "contract": "TermPool",
+            "src": "contracts/TermPool.sol:31"
+          },
+          {
+            "label": "terms",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_array(t_struct(Term)7534_storage)dyn_storage",
+            "contract": "TermPool",
+            "src": "contracts/TermPool.sol:41"
+          },
+          {
+            "label": "activeTermsIndex",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_struct(UintSet)5627_storage",
+            "contract": "TermPool",
+            "src": "contracts/TermPool.sol:44"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_bytes32)dyn_storage": {
+            "label": "bytes32[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_struct(Term)7534_storage)dyn_storage": {
+            "label": "struct ITermPool.Term[]",
+            "numberOfBytes": "32"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_bytes32": {
+            "label": "bytes32",
+            "numberOfBytes": "32"
+          },
+          "t_enum(TermStatus)7512": {
+            "label": "enum ITermPool.TermStatus",
+            "members": [
+              "Created",
+              "Cancelled",
+              "Repayed"
+            ],
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_bytes32,t_uint256)": {
+            "label": "mapping(bytes32 => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Set)5155_storage": {
+            "label": "struct EnumerableSet.Set",
+            "members": [
+              {
+                "label": "_values",
+                "type": "t_array(t_bytes32)dyn_storage",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_indexes",
+                "type": "t_mapping(t_bytes32,t_uint256)",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_struct(Term)7534_storage": {
+            "label": "struct ITermPool.Term",
+            "members": [
+              {
+                "label": "minSize",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "maxSize",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "size",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "startDate",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "depositWindowMaturity",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "maturityDate",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "5"
+              },
+              {
+                "label": "rewardRate",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "6"
+              },
+              {
+                "label": "availableReward",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "7"
+              },
+              {
+                "label": "status",
+                "type": "t_enum(TermStatus)7512",
+                "offset": 0,
+                "slot": "8"
+              },
+              {
+                "label": "tpToken",
+                "type": "t_address",
+                "offset": 1,
+                "slot": "8"
+              }
+            ],
+            "numberOfBytes": "288"
+          },
+          "t_struct(UintSet)5627_storage": {
+            "label": "struct EnumerableSet.UintSet",
+            "members": [
+              {
+                "label": "_inner",
+                "type": "t_struct(Set)5155_storage",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "d1be8a2621db7c6cad85bb5dc5ffee4652b08885c08864784ccea4dee7c17791": {
+      "address": "0xf27f07635C17881A3db6E1292b8fdB0F1764E3A7",
+      "txHash": "0x04c07ebcede18f110370f2a1f2d4a215091fd282fdf64a06c761c782484044ad",
+      "layout": {
+        "solcVersion": "0.8.17",
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
+          },
+          {
+            "label": "factory",
+            "offset": 2,
+            "slot": "0",
+            "type": "t_address",
+            "contract": "TermPool",
+            "src": "contracts/TermPool.sol:22"
+          },
+          {
+            "label": "cpToken",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_address",
+            "contract": "TermPool",
+            "src": "contracts/TermPool.sol:25"
+          },
+          {
+            "label": "borrower",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_address",
+            "contract": "TermPool",
+            "src": "contracts/TermPool.sol:28"
+          },
+          {
+            "label": "isListed",
+            "offset": 20,
+            "slot": "2",
+            "type": "t_bool",
+            "contract": "TermPool",
+            "src": "contracts/TermPool.sol:31"
+          },
+          {
+            "label": "terms",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_array(t_struct(Term)7587_storage)dyn_storage",
+            "contract": "TermPool",
+            "src": "contracts/TermPool.sol:41"
+          },
+          {
+            "label": "activeTermsIndex",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_struct(UintSet)5627_storage",
+            "contract": "TermPool",
+            "src": "contracts/TermPool.sol:44"
+          },
+          {
+            "label": "partialRepaymentAllowance",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_mapping(t_uint256,t_bool)",
+            "contract": "TermPool",
+            "src": "contracts/TermPool.sol:46"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_bytes32)dyn_storage": {
+            "label": "bytes32[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_struct(Term)7587_storage)dyn_storage": {
+            "label": "struct ITermPool.Term[]",
+            "numberOfBytes": "32"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_bytes32": {
+            "label": "bytes32",
+            "numberOfBytes": "32"
+          },
+          "t_enum(TermStatus)7565": {
+            "label": "enum ITermPool.TermStatus",
+            "members": [
+              "Created",
+              "Cancelled",
+              "Repayed"
+            ],
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_bytes32,t_uint256)": {
+            "label": "mapping(bytes32 => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_bool)": {
+            "label": "mapping(uint256 => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Set)5155_storage": {
+            "label": "struct EnumerableSet.Set",
+            "members": [
+              {
+                "label": "_values",
+                "type": "t_array(t_bytes32)dyn_storage",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_indexes",
+                "type": "t_mapping(t_bytes32,t_uint256)",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_struct(Term)7587_storage": {
+            "label": "struct ITermPool.Term",
+            "members": [
+              {
+                "label": "minSize",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "maxSize",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "size",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "startDate",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "depositWindowMaturity",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "maturityDate",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "5"
+              },
+              {
+                "label": "rewardRate",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "6"
+              },
+              {
+                "label": "availableReward",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "7"
+              },
+              {
+                "label": "status",
+                "type": "t_enum(TermStatus)7565",
+                "offset": 0,
+                "slot": "8"
+              },
+              {
+                "label": "tpToken",
+                "type": "t_address",
+                "offset": 1,
+                "slot": "8"
+              }
+            ],
+            "numberOfBytes": "288"
+          },
+          "t_struct(UintSet)5627_storage": {
+            "label": "struct EnumerableSet.UintSet",
+            "members": [
+              {
+                "label": "_inner",
+                "type": "t_struct(Set)5155_storage",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "b0b0064c6a9ce40ff31bd7c2be3f9c41aa766615d915538265534e89501bb4c3": {
+      "address": "0xCC9027f8038B503995b50C0F87be8D68abFA407c",
+      "txHash": "0x045007eeae2e8f84ab7b1af7660aedf4d4d40f5d6c74ba4bfcc91c9b40bd29f0",
+      "layout": {
+        "solcVersion": "0.8.17",
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:63",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:68"
+          },
+          {
+            "label": "factory",
+            "offset": 2,
+            "slot": "0",
+            "type": "t_address",
+            "contract": "TermPool",
+            "src": "contracts/TermPool.sol:22"
+          },
+          {
+            "label": "cpToken",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_address",
+            "contract": "TermPool",
+            "src": "contracts/TermPool.sol:25"
+          },
+          {
+            "label": "borrower",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_address",
+            "contract": "TermPool",
+            "src": "contracts/TermPool.sol:28"
+          },
+          {
+            "label": "isListed",
+            "offset": 20,
+            "slot": "2",
+            "type": "t_bool",
+            "contract": "TermPool",
+            "src": "contracts/TermPool.sol:31"
+          },
+          {
+            "label": "terms",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_array(t_struct(Term)7948_storage)dyn_storage",
+            "contract": "TermPool",
+            "src": "contracts/TermPool.sol:41"
+          },
+          {
+            "label": "activeTermsIndex",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_struct(UintSet)5978_storage",
+            "contract": "TermPool",
+            "src": "contracts/TermPool.sol:44"
+          },
+          {
+            "label": "partialRepaymentAllowance",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_mapping(t_uint256,t_bool)",
+            "contract": "TermPool",
+            "src": "contracts/TermPool.sol:46"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_bytes32)dyn_storage": {
+            "label": "bytes32[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_struct(Term)7948_storage)dyn_storage": {
+            "label": "struct ITermPool.Term[]",
+            "numberOfBytes": "32"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_bytes32": {
+            "label": "bytes32",
+            "numberOfBytes": "32"
+          },
+          "t_enum(TermStatus)7926": {
+            "label": "enum ITermPool.TermStatus",
+            "members": [
+              "Created",
+              "Cancelled",
+              "Repayed"
+            ],
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_bytes32,t_uint256)": {
+            "label": "mapping(bytes32 => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_bool)": {
+            "label": "mapping(uint256 => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Set)5506_storage": {
+            "label": "struct EnumerableSet.Set",
+            "members": [
+              {
+                "label": "_values",
+                "type": "t_array(t_bytes32)dyn_storage",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_indexes",
+                "type": "t_mapping(t_bytes32,t_uint256)",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_struct(Term)7948_storage": {
+            "label": "struct ITermPool.Term",
+            "members": [
+              {
+                "label": "minSize",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "maxSize",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "size",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "startDate",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "depositWindowMaturity",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "maturityDate",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "5"
+              },
+              {
+                "label": "rewardRate",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "6"
+              },
+              {
+                "label": "availableReward",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "7"
+              },
+              {
+                "label": "status",
+                "type": "t_enum(TermStatus)7926",
+                "offset": 0,
+                "slot": "8"
+              },
+              {
+                "label": "tpToken",
+                "type": "t_address",
+                "offset": 1,
+                "slot": "8"
+              }
+            ],
+            "numberOfBytes": "288"
+          },
+          "t_struct(UintSet)5978_storage": {
+            "label": "struct EnumerableSet.UintSet",
+            "members": [
+              {
+                "label": "_inner",
+                "type": "t_struct(Set)5506_storage",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "94f00b4b196f380fd991da2fe6ecbf358bfdf2185263cab8b66af37301207ff2": {
+      "address": "0xD1816F0266D7FdeA179827366c55b5010175d553",
+      "txHash": "0x2a954ff0cb69c260135f19b3e7c975577197402625ac6c10f444c73eb91be219",
+      "layout": {
+        "solcVersion": "0.8.17",
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:63",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:68"
+          },
+          {
+            "label": "listedPoolsCount",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_uint256",
+            "contract": "TermPoolFactory",
+            "src": "contracts/TermPoolFactory.sol:17"
+          },
+          {
+            "label": "permissionlessFactory",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_address",
+            "contract": "TermPoolFactory",
+            "src": "contracts/TermPoolFactory.sol:20"
+          },
+          {
+            "label": "termPoolBeacon",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_address",
+            "contract": "TermPoolFactory",
+            "src": "contracts/TermPoolFactory.sol:23"
+          },
+          {
+            "label": "tpTokenBeacon",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_address",
+            "contract": "TermPoolFactory",
+            "src": "contracts/TermPoolFactory.sol:26"
+          },
+          {
+            "label": "_usedCpTokens",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_array(t_address)dyn_storage",
+            "contract": "TermPoolFactory",
+            "src": "contracts/TermPoolFactory.sol:29"
+          },
+          {
+            "label": "poolsByCpToken",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_mapping(t_address,t_struct(PoolInfo)8166_storage)",
+            "contract": "TermPoolFactory",
+            "src": "contracts/TermPoolFactory.sol:32"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]",
+            "numberOfBytes": "32"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_struct(PoolInfo)8166_storage)": {
+            "label": "mapping(address => struct ITermPoolFactory.PoolInfo)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(PoolInfo)8166_storage": {
+            "label": "struct ITermPoolFactory.PoolInfo",
+            "members": [
+              {
+                "label": "pool",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "currency",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "isListed",
+                "type": "t_bool",
+                "offset": 20,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "2eaa3eb2d235130e37c587fb3856e91f8fe996cb8ac92a309b82a959f20164fb": {
+      "address": "0xc499d4dffeedF2F9d88dBC3D6ba43B770488D58c",
+      "txHash": "0x1244563abe7866785704b6d1724686048673a9f3ba823d0f9bf3275551c3fa7a",
+      "layout": {
+        "solcVersion": "0.8.17",
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:63",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:68"
+          },
+          {
+            "label": "_status",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_uint256",
+            "contract": "ReentrancyGuardUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol:38"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "ReentrancyGuardUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol:88"
+          },
+          {
+            "label": "listedPoolsCount",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_uint256",
+            "contract": "TermPoolFactory",
+            "src": "contracts/TermPoolFactory.sol:19"
+          },
+          {
+            "label": "permissionlessFactory",
+            "offset": 0,
+            "slot": "52",
+            "type": "t_address",
+            "contract": "TermPoolFactory",
+            "src": "contracts/TermPoolFactory.sol:22"
+          },
+          {
+            "label": "termPoolBeacon",
+            "offset": 0,
+            "slot": "53",
+            "type": "t_address",
+            "contract": "TermPoolFactory",
+            "src": "contracts/TermPoolFactory.sol:25"
+          },
+          {
+            "label": "tpTokenBeacon",
+            "offset": 0,
+            "slot": "54",
+            "type": "t_address",
+            "contract": "TermPoolFactory",
+            "src": "contracts/TermPoolFactory.sol:28"
+          },
+          {
+            "label": "usedCpTokens",
+            "offset": 0,
+            "slot": "55",
+            "type": "t_array(t_address)dyn_storage",
+            "contract": "TermPoolFactory",
+            "src": "contracts/TermPoolFactory.sol:31"
+          },
+          {
+            "label": "poolsByCpToken",
+            "offset": 0,
+            "slot": "56",
+            "type": "t_mapping(t_address,t_struct(PoolInfo)8134_storage)",
+            "contract": "TermPoolFactory",
+            "src": "contracts/TermPoolFactory.sol:34"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_struct(PoolInfo)8134_storage)": {
+            "label": "mapping(address => struct ITermPoolFactory.PoolInfo)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(PoolInfo)8134_storage": {
+            "label": "struct ITermPoolFactory.PoolInfo",
+            "members": [
+              {
+                "label": "pool",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "currency",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "isListed",
+                "type": "t_bool",
+                "offset": 20,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "d86b66bb931ee4bfec9a04a5caca278cfe567761c6f1917ec9f45358cd607898": {
+      "address": "0xc5cC5C190Fac6c9C1cB883C341f477655785F13c",
+      "txHash": "0x5f84bb31d542ed8177e18bae9a823ebecc168495062c2ca58b46d6a9597b939c",
+      "layout": {
+        "solcVersion": "0.8.17",
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:63",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:68"
+          },
+          {
+            "label": "_status",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_uint256",
+            "contract": "ReentrancyGuardUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol:38"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "ReentrancyGuardUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol:88"
+          },
+          {
+            "label": "factory",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_address",
+            "contract": "TermPool",
+            "src": "contracts/TermPool.sol:24"
+          },
+          {
+            "label": "cpToken",
+            "offset": 0,
+            "slot": "52",
+            "type": "t_address",
+            "contract": "TermPool",
+            "src": "contracts/TermPool.sol:27"
+          },
+          {
+            "label": "borrower",
+            "offset": 0,
+            "slot": "53",
+            "type": "t_address",
+            "contract": "TermPool",
+            "src": "contracts/TermPool.sol:30"
+          },
+          {
+            "label": "isListed",
+            "offset": 20,
+            "slot": "53",
+            "type": "t_bool",
+            "contract": "TermPool",
+            "src": "contracts/TermPool.sol:33"
+          },
+          {
+            "label": "terms",
+            "offset": 0,
+            "slot": "54",
+            "type": "t_array(t_struct(Term)5003_storage)dyn_storage",
+            "contract": "TermPool",
+            "src": "contracts/TermPool.sol:42"
+          },
+          {
+            "label": "activeTermsIndex",
+            "offset": 0,
+            "slot": "55",
+            "type": "t_struct(UintSet)3137_storage",
+            "contract": "TermPool",
+            "src": "contracts/TermPool.sol:45"
+          },
+          {
+            "label": "partialRepaymentAllowance",
+            "offset": 0,
+            "slot": "57",
+            "type": "t_mapping(t_uint256,t_bool)",
+            "contract": "TermPool",
+            "src": "contracts/TermPool.sol:47"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_bytes32)dyn_storage": {
+            "label": "bytes32[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_struct(Term)5003_storage)dyn_storage": {
+            "label": "struct ITermPool.Term[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_bytes32": {
+            "label": "bytes32",
+            "numberOfBytes": "32"
+          },
+          "t_enum(TermStatus)4983": {
+            "label": "enum ITermPool.TermStatus",
+            "members": [
+              "Created",
+              "Cancelled",
+              "Repaid"
+            ],
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_bytes32,t_uint256)": {
+            "label": "mapping(bytes32 => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_bool)": {
+            "label": "mapping(uint256 => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Set)2665_storage": {
+            "label": "struct EnumerableSet.Set",
+            "members": [
+              {
+                "label": "_values",
+                "type": "t_array(t_bytes32)dyn_storage",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_indexes",
+                "type": "t_mapping(t_bytes32,t_uint256)",
+                "offset": 0,
+                "slot": "1"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_struct(Term)5003_storage": {
+            "label": "struct ITermPool.Term",
+            "members": [
+              {
+                "label": "maxSize",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "size",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "startDate",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "depositWindowMaturity",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "maturityDate",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "rewardRate",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "5"
+              },
+              {
+                "label": "availableReward",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "6"
+              },
+              {
+                "label": "status",
+                "type": "t_enum(TermStatus)4983",
+                "offset": 0,
+                "slot": "7"
+              },
+              {
+                "label": "tpToken",
+                "type": "t_address",
+                "offset": 1,
+                "slot": "7"
+              }
+            ],
+            "numberOfBytes": "256"
+          },
+          "t_struct(UintSet)3137_storage": {
+            "label": "struct EnumerableSet.UintSet",
+            "members": [
+              {
+                "label": "_inner",
+                "type": "t_struct(Set)2665_storage",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "64"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "278709be657a36300dc8c80afe70c0887d0d7376affad8525f031f60f4d41a8a": {
+      "address": "0x0eDc2E57347Db744aE7E342d7c76209B93f96f10",
+      "txHash": "0x5ac48bbf5c075786a5f4a8dae609cdac270a7f7e89e724768b3eb8b37329702b",
+      "layout": {
+        "solcVersion": "0.8.17",
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:63",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:68"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:36"
+          },
+          {
+            "label": "_balances",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "ERC20Upgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol:40"
+          },
+          {
+            "label": "_allowances",
+            "offset": 0,
+            "slot": "52",
+            "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+            "contract": "ERC20Upgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol:42"
+          },
+          {
+            "label": "_totalSupply",
+            "offset": 0,
+            "slot": "53",
+            "type": "t_uint256",
+            "contract": "ERC20Upgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol:44"
+          },
+          {
+            "label": "_name",
+            "offset": 0,
+            "slot": "54",
+            "type": "t_string_storage",
+            "contract": "ERC20Upgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol:46"
+          },
+          {
+            "label": "_symbol",
+            "offset": 0,
+            "slot": "55",
+            "type": "t_string_storage",
+            "contract": "ERC20Upgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol:47"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "56",
+            "type": "t_array(t_uint256)45_storage",
+            "contract": "ERC20Upgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol:376"
+          },
+          {
+            "label": "termPool",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_address",
+            "contract": "TpToken",
+            "src": "contracts/TpToken.sol:12"
+          },
+          {
+            "label": "__decimals",
+            "offset": 20,
+            "slot": "101",
+            "type": "t_uint8",
+            "contract": "TpToken",
+            "src": "contracts/TpToken.sol:15"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_uint256)45_storage": {
+            "label": "uint256[45]",
+            "numberOfBytes": "1440"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+            "label": "mapping(address => mapping(address => uint256))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+    "network": "sepolia",
+    "TermPoolFactory": {
+        "address": "0x59137c2C6f3dFc38BBad50515A63A120AF33d2B5",
+        "startBlock": 4092523
+    }
+}

@@ -1,0 +1,8 @@
+/generated*
+/build
+abis
+!abis/ERC20.json
+subgraph.yaml
+.env
+subgraph.yaml
+.DS_Store
